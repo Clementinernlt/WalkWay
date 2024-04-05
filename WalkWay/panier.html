@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Votre panier</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg bg-white p-0 m-0">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/logo.png" alt="Logo" height="62" width="130" class="d-inline-block align-text-top" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse bg-white " id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">ACCUEIL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="co.html">WW X ROY LICHTENSTEIN</a>
+          </li>
+          <li class="nav-item">
+            <a href="panier.html">
+              <img src="Images/panier.png" width="35px" alt="Panier" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 pt-5">
+    <h2 class="text-center ">Votre Panier</h2>
+    <div class="cart-items">
+      <div class="cart-item">
+        <img src="LR-1957/classic.png" alt="Sneaker Image" class="cart-item-image">
+        <div class="item-details">
+          <h1 class="display-6 mt-5 fw-bolder">LR-1957</h1>
+          <div class="fs-5 mb-3">
+            <span class="price">109.89 €</span>
+          </div>
+          <div class="counter" data-count="0">1</div>
+          <button class="counter-button" onclick="decrement(this)">-</button>
+          <button class="counter-button" onclick="increment(this)">+</button>
+        </div>
+      </div>
+      <div class="cart-item">
+        <img src="Images/LR-1965.jpg" alt="Sneaker Image" class="cart-item-image">
+        <div class="item-details">
+          <h1 class="display-6 mt-5 fw-bolder">LR-1965</h1>
+          <div class="fs-5 mb-3">
+            <span class="price">119.89 €</span>
+          </div>
+          <div class="counter" data-count="0">1</div>
+          <button class="counter-button" onclick="decrement(this)">-</button>
+          <button class="counter-button" onclick="increment(this)">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="checkout-container text-center">
+      <h4>Total: <span id="totalPrice">229.78 €</span></h4>
+      <button class="checkout-btn">Passer à la caisse</button>
+    </div>
+  </div>
+
+  <script>
+    function increment(button) {
+      const counterElement = button.parentNode.querySelector('.counter');
+      let count = parseInt(counterElement.textContent);
+      count++;
+      updateCounter(counterElement, count);
+      calculateTotalPrice();
+    }
+
+    function decrement(button) {
+      const counterElement = button.parentNode.querySelector('.counter');
+      let count = parseInt(counterElement.textContent);
+      count--;
+      updateCounter(counterElement, count);
+      calculateTotalPrice();
+    }
+
+    function updateCounter(counterElement, count) {
+      counterElement.textContent = count;
+      if (count < 1) {
+        const cartItemElement = counterElement.closest('.cart-item');
+        if (cartItemElement) {
+          cartItemElement.remove();
+        }
+      }
+    }
+
+    function calculateTotalPrice() {
+      const counters = document.querySelectorAll('.counter');
+      let totalPrice = 0;
+      counters.forEach(counter => {
+        const count = parseInt(counter.textContent);
+        const priceElement = counter.closest('.item-details').querySelector('.price');
+        const price = parseFloat(priceElement.textContent.replace(' €', ''));
+        totalPrice += count * price;
+      });
+      document.getElementById('totalPrice').textContent = totalPrice.toFixed(2) + ' €';
+    }
+  </script>
+
+  <div class="container-fluid mt-1" style="background-color: #101724">
+    <footer class="text-center text-lg-start text-white">
+      <div class="container p-4 pb-0">
+        <section class="">
+          <div class="row">
+            <div class="col-6 col-md-3 mt-4 px-1">
+              <h6 class="linkFooterBig">WW X ROY LICHTENSTEIN</h6>
+              <div class="link">
+                <a class="linkFooter" href="LR-1965/index.html">LR-1965</a>
+                <a class="linkFooter" href="LR-1957/index.html">LR-1957</a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 mt-4 px-1">
+              <h6 class="linkFooterBig">SERVICES </h6>
+              <div class="link">
+                <a class="linkFooter">MENTIONS LEGALES</a>
+                <a class="linkFooter">CONTACT</a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 mt-4 px-1">
+              <h6 class="linkFooterBig">MODE DE LIVRAISON :</h6>
+              <img src="Images/go.png" width="69%" alt="">
+            </div>
+            <div class="col-6 col-md-3 mt-4 px-1">
+              <h6 class="linkFooterBig">MODE DE PAIMENT :</h6>
+              <img src="Images/pay.png" width="75%" alt="">
+            </div>
+          </div>
+        </section>
+        <hr class="my-3">
+        <section class="p-1 pt-0">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="p-3 text-white">
+                <h9>© 2024 : Clémentine Renault, Sevan Vardanian et Florian Beraud </h9>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

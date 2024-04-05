@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Birbone</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!---------------------NAV------------------------->
+
+  <nav class="navbar fixed-top navbar-expand-lg bg-white p-0 m-0">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/logo.jpg" alt="Logo" height="50" class="d-inline-block align-text-top" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse bg-white " id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">ACCUEIL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="co.html">ROY LICHTENSTEIN</a>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" onmouseover="openPopup()">
+              <img src="Images/panier.png" width="25px" alt="Panier" />
+            </button>
+            <div class="popup-container" id="popup" onmouseleave="closePopup()">
+              <div class="popup-content">
+                <div class="popup-title">VOTRE PANIER</div>
+                <div class="popup-item">
+                  <span class="popup-close2" onclick="lol">&times;</span>
+                  <span>T-SHIRT SUN</span>
+                  <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+                <div class="popup-item">
+                  <span class="popup-close2" onclick="lol">&times;</span>
+                  <span>T-SHIRT NYE</span>
+                  <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+
+                <button class="buttonmoney">PAIEMENT</button>
+
+              </div>
+            </div>
+            <script>
+              function openPopup() {
+                document.getElementById('popup').style.display = 'block';
+              }
+
+              function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+              }
+            </script>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!---------------------Produit------------------------->
+
+  <section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="row gx-4 gx-lg-5 align-items-center">
+        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="../Images/citron.jpeg" alt="..." /></div>
+        <div class="col-md-6">
+          <h1 class="display-6 mb-5 fw-bolder">T-SHIRT SUNNY</h1>
+          <div class="small mb-2">REFERENCE : Z468T24I</div>
+          <div class="fs-5 mb-3">
+            <span> 13.00€</span>
+          </div>
+          <p class="lead">Ce t-shirt incarne la fusion parfaite entre style et confort. Fabriqué à partir de coton doux
+            de qualité supérieure, ce vêtement offre un confort exceptionnel.</p>
+          <div class="d-flex align-items-center gap-3">
+            <input class="form-control me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+            <div class="dropdown">
+              <button class="buton" type="button" id="sizeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                SELECTIONNER VOTRE TAILLE
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="sizeDropdown">
+                <li><a class="dropdown-item" href="#">2-4 ans</a></li>
+                <li><a class="dropdown-item" href="#">4-6 ans</a></li>
+                <li><a class="dropdown-item" href="#">6-8 ans</a></li>
+                <li><a class="dropdown-item" href="#">8-10 ans</a></li>
+                <li><a class="dropdown-item" href="#">10-12 ans</a></li>
+                <li><a class="dropdown-item" href="#">12-14 ans</a></li>
+              </ul>
+            </div>
+            <button class="button">Ajouter au panier</button>
+          </div>
+          <div class="d-flex justify-content-left gap-3">
+            <span class="rating">★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="fw-bolder mb-4 mt-4">Avis</h2>
+        <div class="avis">
+          <div class="avis-body">
+            <h5 class="avis-title">Super T-shirt!</h5>
+            <p class="avis-text">Ce t-shirt est très confortable et la qualité est excellente.</p>
+          </div>
+          <div class="avis-footer">
+            <p>Évaluation : <span class="rating">★★★★★</span></p>
+          </div>
+        </div>
+        <div class="avis">
+          <div class="avis-body">
+            <h5 class="avis-title">Très bien</h5>
+            <p class="avis-text">Bien que simple en apparence, ce t-shirt est devenu un incontournable dans ma
+              garde-robe. Confortable et élégant, il s'adapte à toutes les occasions. Sa qualité remarquable en fait un
+              choix parfait pour un usage quotidien. Je recommande vivement ce produit pour son rapport qualité-prix
+              exceptionnel.</p>
+          </div>
+          <div class="avis-footer">
+            <p>Évaluation : <span class="rating">★★★★☆</span></p>
+          </div>
+        </div>
+        <div class="avis">
+          <div class="avis-body">
+            <h5 class="avis-title">Bon produit</h5>
+            <p class="avis-text">Qualité pas au top, le produit s'habime assez rapidement, mais reste très jolie</p>
+          </div>
+          <div class="avis-footer">
+            <p>Évaluation : <span class="rating">★★★☆☆</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!---------------------Footer------------------------->
+  <div class="container-fluid mt-1" style="background-color: #054419">
+    <footer class="text-center text-lg-start text-white">
+      <div class="container p-4 pb-0">
+        <section class="">
+          <div class="row">
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+              <h6 class="linkFooterBig">WalkWay X Roy Lichtenstein</h6>
+              <div class="link">
+                <a class="linkFooter" href="enf1.html">paireflorian</a>
+                <a class="linkFooter" href="enf2.html">paireSevan</a>
+              </div>
+            </div>
+            <hr class="w-100 clearfix d-md-none" />
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+              <h6 class="linkFooterBig">SERVICES </h6>
+              <div class="link">
+                <a class="linkFooter">MENTIONS LEGALES</a>
+                <a class="linkFooter">CONTACT</a>
+              </div>
+            </div>
+            <hr class="w-100 clearfix d-md-none" />
+            <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mt-3">
+              <h6 class="linkFooterBig">MODE DE LIVRAISON :</h6>
+              <img src="Images/go.png" width="39%" alt="">
+              <h6 class="linkFooterBig mt-4">MODE DE PAIMENT :</h6>
+              <img src="Images/pay.png" width="43%" alt="">
+            </div>
+          </div>
+        </section>
+        <hr class="my-3">
+        <section class="p-1 pt-0">
+          <div class="col-md-7 col-lg-8 text-center text-md-start mx-auto">
+            <div class="p-3 text-white mx-auto d-flex justify-content-center">
+              <p>© 2024 : Clémentine Renault, Sevan Vardanian et Florian Beraud </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
